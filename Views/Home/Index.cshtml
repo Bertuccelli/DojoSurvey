@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Hello!</title>
+        <link rel="stylesheet" href="~/css/style.css" />
+    </head>
+
+
+    <body>
+        <form action="results" method="post">
+            <div class="box">
+                <div class="formstuff">
+                    <div class="subject">
+                        <label for="name">Your Name:</label>
+                        <label for="location">Dojo Location:</label>
+                        <label for="language">Favorite Language:</label>
+                        <label for="comments">Comments (optional):</label>
+                    </div>
+
+                    <div class="answer">
+                        <input type="text" name="name">
+                        <select name="location" id="location">
+                            <option value="San Jose">San Jose</option>
+                            <option value="Portland">Portland</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                        </select>
+                        <select name="language" id="language">
+                            <option value="C#">C#</option>
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                        </select>
+                        <input type="text" name="comments" id="comments">
+                    </div>
+                </div>
+                <button class="button" type="submit">Submit</button>
+            </div>
+        </form>
+    </body>
+
+</html>
