@@ -4,16 +4,20 @@ namespace Survey.Controllers;
 public class HomeController : Controller {
     [HttpGet("")]
 
-    public ViewResult Index() {
+    public ViewResult Survey() {
         return View();
     }
 
     [HttpPost("results")]
-    public IActionResult Results(string name, string comments, string language, string location ){
-        ViewBag.name = name;
-        ViewBag.comments = comments;
-        ViewBag.language = language;
-        ViewBag.location = location;
+    public IActionResult Results(SurveyResults results){
+        if(ModelState.IsValid){
+            return View("Index", results);
+        }
+        else {
+            return View("Survey");
+        }
+    }
+    public IActionResult Privacy() {
         return View();
     }
 
