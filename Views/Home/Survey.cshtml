@@ -1,3 +1,4 @@
+@model SurveyResults;
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,29 +9,33 @@
 
 
     <body>
-        <form action="/results" method="post">
+        <form asp-action="results" asp-controller="Home" method="post">
+            <span asp-validation-for="Name" class="errormsg"></span>
+            <span asp-validation-for="Location" class="errormsg"></span>
+            <span asp-validation-for="Language" class="errormsg"></span>
+            <span asp-validation-for="Comments" class="errormsg"></span>
             <div class="box">
                 <div class="formstuff">
                     <div class="subject">
-                        <label for="name">Your Name:</label>
-                        <label for="location">Dojo Location:</label>
-                        <label for="language">Favorite Language:</label>
-                        <label for="comments">Comments (optional):</label>
+                        <label for="Name">Your Name:</label>
+                        <label for="Location">Dojo Location:</label>
+                        <label for="Language">Favorite Language:</label>
+                        <label for="Comments">Comments (optional):</label>
                     </div>
 
                     <div class="answer">
-                        <input type="text" name="Name">
-                        <select name="Location" id="location">
+                        <input asp-for="Name">
+                        <select asp-for="Location" id="location">
                             <option value="San Jose">San Jose</option>
                             <option value="Portland">Portland</option>
                             <option value="Los Angeles">Los Angeles</option>
                         </select>
-                        <select name="Language" id="language">
+                        <select asp-for="Language" id="language">
                             <option value="C#">C#</option>
                             <option value="Java">Java</option>
                             <option value="Python">Python</option>
                         </select>
-                        <input type="text" name="Comments" id="comments">
+                        <input type="text" asp-for="Comments" id="comments">
                     </div>
                 </div>
                 <button class="button" type="submit">Submit</button>

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-namespace Survey.Controllers;
+using DojoSurvey.Models;
+namespace DojoSurvey.Controllers;
 
 public class HomeController : Controller {
     [HttpGet("")]
